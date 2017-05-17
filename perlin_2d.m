@@ -13,7 +13,7 @@ function H = perlin_2d(f, X, Y)
     J0 = floor(Y);
     J1 = ceil(Y);
 
-    %% Calculate the distance between control points and each coordinates
+    %% Calculate the distance between each coordinates and control points 
     U0 = X - I0;
     U1 = X - I1;
     V0 = Y - J0;
