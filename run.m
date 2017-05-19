@@ -3,8 +3,8 @@ clear
 close
 
 %% Set the range of area to generate the terrain
-x = [0:0.01:3];
-y = [0:0.01:3];
+x = gpuArray([0:0.01:3]);
+y = gpuArray([0:0.01:3]);
 
 %% Generate the random terrain with Perlin noise
 % Initial calculation
@@ -13,7 +13,7 @@ f = @(t) myinterpolation(t);
 H = perlin_2d(f, 10, X, Y);
 
 % Fractal Perlin noise
-n = 5;
+n = 8;
 for i = 1:n
     xtmp = 2^i*x;
     ytmp = 2^i*y;
