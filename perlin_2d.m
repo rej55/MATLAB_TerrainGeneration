@@ -1,9 +1,9 @@
 %% Generate the random terrain with Perlin noise
-function H = perlin_2d(f, X, Y)
+function H = perlin_2d(f, Amp, X, Y)
     %% Generate the gradient on control points
     [cpx, cpy] = meshgrid([floor(X(1,1)):ceil(X(end, end))], [floor(Y(1,1)):ceil(Y(end, end))]);
-    Gx = randn(size(cpx));
-    Gy = randn(size(cpy));
+    Gx = Amp*(randn(size(cpx)));
+    Gy = Amp*(randn(size(cpy)));
     FGx = scatteredInterpolant(cpx(:), cpy(:), Gx(:));
     FGy = scatteredInterpolant(cpx(:), cpy(:), Gy(:));
 
